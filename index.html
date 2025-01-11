@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>PIXELATE</title>s
+    <meta name="viewport" content="width=900">
+    <meta property="og:title" content="PIXELATE">
+    <meta property="og:image" content="img/progress-center-7_1.jpg">
+    <link rel="icon" href="" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script src="js/d3.js" charset="utf-8"></script>
+    </head><body>
+      <div id="page">
+        <div class="normal">
+        <h1>PIXLATE</h1>
+        </div>
+        <div class="normal">
+          <p class="main">A generative art project combining algorithms and fine arts to create organic, visually captivating patterns.</p>
+        </div>
+      <div class="header">
+        <div class="animation shadow init resize-parent"><img class="art resize-child">
+          <canvas class="mask resize-child"></canvas>
+          <canvas class="particles resize-child"></canvas>
+          <div class="play"><img src="img/play.svg">
+            <div class="caption">Play Animation</div>
+          </div>
+        </div>
+      </div>
+      <div class="normal">
+        <p class="main">I have been trained in fine arts, and I’ve always wanted to combine my love for art with coding. This project is my way of exploring that intersection. I’ve always loved the organic beauty of oil painting—the way countless shades blend seamlessly into one another, creating depth and emotion. With this project, I aimed to recreate that effect through code, letting algorithms mimic the natural flow of colors and patterns, blending art and technology into something truly unique. So, you might think, "I never knew art could be coded!" Well, during my semester break last summer, I came across this <a href="https://www.youtube.com/watch?v=w_59Tq_chHQ&t=71s" target="_blank">video</a>, which sparked the idea for this project. In addition, I read countless books on algorithmic/generative art and creative coding from my campus library which gave a boost to my learning.</p>
+      </div>
+      <div class="normal">
+        <div>
+        <p><h2>What is Generative Art?</h2><p>
+        </div>
+        <p class="main">Generative art is a form of art that is created using algorithms, where the artist sets up a system or a set of rules, and the final piece is produced by this system or process, sometimes with the help of randomness. This art is often autonomous, meaning the system or algorithm runs on its own to create the artwork without the direct involvement of the artist in each step. The key characteristic of generative art is that the artist is not creating every detail by hand; instead, they are designing a process that generates the artwork. The artist typically defines the initial conditions, constraints, and sometimes inputs, and then the algorithm creates the output, which can vary from piece to piece based on random elements or parameters set by the artist.</p>
+      </div>
+      <div class="normal">
+        <p><h2>Elements of Generative Art</h2></p>
+        <p class="side">
+          <ul>
+            <li><b>Algorithmic Systems:</b>The artist writes code or designs a mathematical process that generates the art. This could involve equations, randomness, iterative processes, or other rule-based systems.</li>
+            <li><b>Autonomy:</b>Once the system is set up, the artwork can be generated automatically or interactively, with minimal human intervention.</li>
+            <li><b>Variation:</b>The outcome of generative art is often unpredictable, with different results each time the process is run. This allows for endless possibilities and unique creations.</li>
+            <li><b>Mathematics and Logic:</b> Many generative artists use mathematical concepts like fractals, randomness, geometry, and probability to create visually captivating designs.</li>
+          </ul>
+        </p>
+      </div>
+      <div class="normal">
+       <div>
+       <p><h2>How does it work?</h2><p>
+       </div>
+       <p class="normal">The idea behind this process is to represent all possible colors within a color space, such as RGB, HSL, or others, in an organized and meaningful way. This is achieved by sorting and placing these colors on a canvas using algorithms. The placement of the colors is often based on certain mathematical principles, such as Euclidean distance in the chosen color space or the hue of the colors.</p>
+       </div>
+       <div class="normal">
+        <div>
+        <p><h2>The Technical Side</h2><p>
+        </div>
+        <p class="normal">In the algorithm, a seed point is initially chosen, and the placement of colors begins from that point and spreads outward, much like how a seed grows. The algorithm ensures that similar colors are grouped closely together. For example, colors with similar hues, such as orange and yellow, will naturally cluster together in the arrangement. This creates visually coherent and aesthetically pleasing patterns, where colors that are perceived as similar by the human eye are positioned near each other. The result is a seamless transition between colors and an intuitive way of understanding the relationships between them within the given color space <br> A nearest neighbor search is often employed to optimize the placement of colors by identifying the closest match in a 3D color space, such as RGB. Data structures like K-D trees are used to accelerate this process, allowing for quick retrieval of the most similar colors during placement. This ensures that the algorithm remains efficient even as the canvas size grows significantly.</p>
+        </div> 
+      <div class="side" style="display: flex; justify-content: center; align-items: center;">
+      <img src="img/PIXLATE.gif" alt="Visual representation" style="width:50%; height:auto;">
+       </div>
+       <br><br>
+       <div class="normal">
+        <div class="main">
+          <p>For example, take this painting <b>Water Lilies by Claude Monet</b>.</p>
+        </div>
+      </div>
+      <div class="large monet"><img src="img/Wallpaper-KH-Lily-Blue-2.jpg" srcset="img/wa 2x"></div>
+      <div class="normal">
+        <div class="main">
+          <p>The colors that make up the painting can be arranged in different ways. My project involved an idea by which has to do with "growing" artwork like a crystal: start by placing a seed color on a blank canvas, and then grow outwards pixel by pixel with like attracting like:</p>
+        </div>
+      </div>
+      <div class="normal">
+        <div class="thought">
+          <img src="img/progress-center-1.png" srcset="img/progress-center-1.png 1x, img/progress-center-1_1.png 2x" class="t-2"><img src="img/progress-center-2.png" srcset="img/progress-center-2.png 1x, img/progress-center-2_1.png 2x" class="t-3"><img src="img/progress-center-3.jpg" srcset="img/progress-center-3.jpg 1x, img/progress-center-3_1.jpg 2x" class="t-4"><img src="img/progress-center-4.jpg" srcset="img/progress-center-4.jpg 1x, img/progress-center-4_1.jpg 2x" class="t-5">
+        </div>
+      </div>
+      <div class="normal">
+        <div class="main">
+          <p>The colorful streaks are a result of the rules of the growth process and the order in which the colors are put down — similar colors tend to cluster together as they're being placed.</p>
+        </div>
+      </div>
+      <div class="large temon"><img src="img/progress-center-7.jpg" srcset="img/progress-center-7.jpg 1x, img/progress-center-7_1.jpg 2x"></div>
+      <div class="normal">
+        <div class="main">
+          <p>You can apply this idea in different ways to make different pictures. Varying the position and number of seed colors gives rise to different spreading patterns, while varying the order in which colors are placed causes different kinds of streaking patterns to appear. You can also play with the forces that cause colors to attract each other to create a more painterly look.</p>
+        </div>
+      </div>
+      <div class="normal">
+        <div class="three-gallery">
+          <div class="piece">
+            <div class="wrap"><img src="img/variations-2.jpg" srcset="img/variations-2.jpg 1x, img/variations-2_1.jpg 2x"></div>
+            <div class="caption">As before, but with two seed points placed in opposite corners of the canvas.</div>
+          </div>
+          <div class="piece">
+            <div class="wrap"><img src="img/variations-7_2.jpg" srcset="img/variations-7_2.jpg 1x, img/variations-7_2_1.jpg 2x"></div>
+            <div class="caption">Colors shuffled randomly and placed via average selection.</div>
+          </div>
+          <div class="piece">
+            <div class="wrap"><img src="img/variations-4.jpg" srcset="img/variations-4.jpg 1x, img/variations-4_1.jpg 2x"></div>
+            <div class="caption">Seed points scattered across the canvas using <a href="http://bl.ocks.org/mbostock/dbb02448b0f93e4c82c3">poisson-disc sampling</a>.</div>
+          </div>
+        </div>
+      </div>
+      <div class="normal">
+        <div>
+        </div>
+        <p class="main">In tasks like rendering, clustering, or color organization, a significant number of pixels need to be processed to determine relationships, groupings, or proximity. Performing these operations in a naive, brute-force manner—such as comparing every pixel with all others—results in a computational bottleneck due to the 
+          𝑂(n<sup>2</sup>) complexity. 
+        </div>
+        <div class="normal">
+          <p><h2>Spatial Search</h2></p>
+          <p class="side">
+            <ul>
+              <li><b>Efficient Pixel Selection:</b>Pixels on the canvas are not simply stored as an unstructured array but are organized in a data structure like a k-d tree, which partitions the pixel data based on spatial and color properties. This allows the algorithm to quickly find the closest matching pixel without iterating over the entire canvas.</li>
+              <li><b>Color and Spatial Proximity:</b>For every step of the artwork's growth, spatial search enables the algorithm to query pixels within a certain distance or matching certain color criteria. For example, when expanding outward, the algorithm can efficiently locate unfilled pixels that have a hue or tone similar to the seed pixel.</li>
+              <li><b>Incremental Growth with Local Coherence:</b>As the artwork grows outward pixel by pixel, spatial search ensures that neighboring pixels are evaluated first, preserving the natural and organic look of the expanding pattern. This mimics the way crystals grow or oil paint blends, creating an aesthetically pleasing result.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="normal">
+          <p class="normal">Using spatial search in this project enables the artwork to "grow" organically, with similar colors clustering naturally and patterns forming seamlessly. This approach not only enhances the visual quality of the generative art but also ensures computational efficiency, making it feasible to experiment with larger and more complex canvases <br> By integrating spatial search, the project bridges art and technology, showing how advanced algorithms can emulate the organic beauty of traditional art forms in a digital space.</p>
+          </div>
+      <div class="normal">
+        <h2>Picking the Pieces</h2>
+      </div>
+      <div class="normal">
+        <div class="main">
+          <p class="first">Now was the time to choose the source material. I toyed with the idea of using img that were personally meaningful, and experimented with lots of pieces from music albums and books. </p>
+        </div>
+      </div>
+      <div class="large scattered-potters">
+        <div>
+          <div class="potter-covers"><img src="img/HP1cover.jpg" srcset="img/HP1cover.jpg 1x, img/HP1cover_1.jpg 2x"><img src="img/HP2cover.jpg" srcset="img/HP2cover.jpg 1x, img/HP2cover_1.jpg 2x"><img src="img/HP3cover.jpg" srcset="img/HP3cover.jpg 1x, img/HP3cover_1.jpg 2x"><img src="img/HP4cover.jpg" srcset="img/HP4cover.jpg 1x, img/HP4cover_1.jpg 2x"><img src="img/HP5cover.jpg" srcset="img/HP5cover.jpg 1x, img/HP5cover_1.jpg 2x"><img src="img/HP6cover.jpg" srcset="img/HP6cover.jpg 1x, img/HP6cover_1.jpg 2x"><img src="img/HP7cover.jpg" srcset="img/HP7cover.jpg 1x, img/HP7cover_1.jpg 2x"></div>
+          <div class="poster-vector"><img src="img/hp1-1.jpg" srcset="img/hp1-1.jpg 1x, img/hp1-1_1.jpg 2x"><img src="img/hp2-2.jpg" srcset="img/hp2-2.jpg 1x, img/hp2-2_1.jpg 2x"><img src="img/hp3-3.jpg" srcset="img/hp3-3.jpg 1x, img/hp3-3_1.jpg 2x"><img src="img/hp4-2.jpg" srcset="img/hp4-2.jpg 1x, img/hp4-2_1.jpg 2x"><img src="img/hp5-2.jpg" srcset="img/hp5-2.jpg 1x, img/hp5-2_1.jpg 2x"><img src="img/hp6-3.jpg" srcset="img/hp6-3.jpg 1x, img/hp6-3_1.jpg 2x"><img src="img/hp7-2.jpg" srcset="img/hp7-2.jpg 1x, img/hp7-2_1.jpg 2x"></div>
+        </div>
+      </div>
+      <div class="normal">
+      </div> 
+        <div class="video">
+          <video poster="img/video_still_2.jpg" preload="none">
+            <source src="media/video.mp4">
+            <source src="media/video.webm">Sorry, your browser doesn't support embedded videos, but don't worry, you can <a href="video.m4a">download</a> it instead.
+          </video>
+          <div class="play">
+            <div class="inner">
+            </div>
+          </div>
+      <div class="full gray gallery">
+        <div class="normal">
+          <h2>The Gallery</h2>
+        </div>
+        <div class="normal">
+          <div class="main">
+            <p>Click on each block of image and play to see it happen" to "Click on each image block to see it in action".</p>
+          </div>
+        </div>
+        <div class="large thumbnails">
+          <div class="row">
+            <img data-cls="wide" data-num="56" data-source="fall" src="img/56.jpg">
+            <img data-cls="wide" data-num="5" data-source="wallpaper_van-gogh_animaatjes-11" src="img/5.jpg">
+            <img data-cls="wide" data-num="84" data-source="img-3-summer" src="img/84.jpg">
+            <img data-cls="wide" data-num="44" data-source="spring-316535_640" src="img/44.jpg">
+            <img data-cls="wide" data-num="65" data-source="the-seine-by-the-trocadero" src="img/65.jpg">
+            <img data-cls="wide" data-num="52" data-source="red-fall-leaves-wallpaper-3" src="img/52.jpg">
+          </div>
+
+          <div class="row">
+            <img data-cls="wide" data-num="80" data-source="img-3-spring" src="img/80.jpg">
+            <img data-cls="wide" data-num="41" data-source="paco_de_lucia_antologia_1" src="img/41.jpg">
+            <img data-cls="wide" data-num="14" data-source="antibes-the-towers-1911" src="img/14.jpg">
+            <img data-cls="wide" data-num="24" data-source="clementines-2" src="img/24.jpg">
+            <img data-cls="wide" data-num="27" data-source="4278721759_dfe38baceb_b" src="img/27.jpg">
+            <img data-cls="wide" data-num="1" data-source="da_vinci_mona_lisa" src="img/1.jpg">
+          </div>
+        </div>
+        <div class="large animation"><img src="img/1.png" class="art">
+          <canvas class="mask"></canvas>
+          <canvas class="particles"></canvas>
+          <div class="play">
+            <div class="inner"><img src="img/play.svg">
+              <div class="caption">Play</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="normal final">
+        <div class="main">
+          <h2>Final Words</h2>
+          <p class="first">This project is a journey into the intersection of art and technology, where algorithms and creativity work hand in hand. By leveraging the power of code, we’ve explored how mathematical precision can create intricate, organic, and visually compelling patterns. It’s a reminder that art isn’t confined to traditional mediums—it can emerge from logic, data, and computation.
+            <br>
+            While this is just the beginning, the possibilities are limitless. With every experiment and iteration, we uncover new ways to blend art and science, continuing to blur the line between human expression and machine intelligence. Thank you for joining me on this exploration—I hope it inspires you to create, experiment, and imagine beyond boundaries.</p>
+          <p>Arnab Jena <br> Dec 2023</p>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  
+
+</body></html>
