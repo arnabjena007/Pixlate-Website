@@ -1000,9 +1000,6 @@ a:active {
         width: 100%; /* Full width for gallery pieces */
         margin-bottom: 20px; /* Add space between pieces */
     }
-    .large {
-        flex-direction: column; /* Stack images vertically */
-    }
     .large img {
         width: 100%; /* Full width for large images */
         height: auto; /* Maintain aspect ratio */
