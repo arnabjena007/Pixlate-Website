@@ -975,3 +975,46 @@ a:active {
   margin-bottom: 10px;
   line-height: 1.2;
 }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 900px) {
+    body {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+    #page {
+        padding: 20px; /* Add padding for mobile */
+    }
+    .header {
+        flex-direction: column; /* Stack header elements vertically */
+        align-items: center; /* Center align items */
+    }
+    .header .animation {
+        width: 100%; /* Make animation take full width */
+        margin: 0; /* Remove margin */
+    }
+    .normal {
+        width: 100%; /* Full width for normal sections */
+        margin: 0; /* Remove margin */
+    }
+    .three-gallery .piece {
+        width: 100%; /* Full width for gallery pieces */
+        margin-bottom: 20px; /* Add space between pieces */
+    }
+    .large {
+        flex-direction: column; /* Stack images vertically */
+    }
+    .large img {
+        width: 100%; /* Full width for large images */
+        height: auto; /* Maintain aspect ratio */
+    }
+    .video {
+        width: 100%; /* Full width for video */
+    }
+    .thumbnails .row {
+        flex-direction: column; /* Stack thumbnails vertically */
+    }
+    .thumbnails img {
+        width: 100%; /* Full width for thumbnails */
+        margin-bottom: 10px; /* Space between thumbnails */
+    }
+}
