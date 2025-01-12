@@ -1007,14 +1007,4 @@ a:active {
         width: 100%; /* Full width for large images */
         height: auto; /* Maintain aspect ratio */
     }
-    .video {
-        width: 100%; /* Full width for video */
-    }
-    .thumbnails .row {
-        flex-direction: column; /* Stack thumbnails vertically */
-    }
-    .thumbnails img {
-        width: 100%; /* Full width for thumbnails */
-        margin-bottom: 10px; /* Space between thumbnails */
-    }
-}
+
